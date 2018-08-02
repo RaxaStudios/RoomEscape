@@ -53,7 +53,6 @@ Content/StarterContent
 *.suo
 *.opensdf
 *.sdf
-*.sln
 *.vc.db
 
 # Precompiled Assets

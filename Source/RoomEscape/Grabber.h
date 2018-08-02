@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Components/InputComponent.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "Grabber.generated.h"
 
 
@@ -28,4 +30,23 @@ private:
 	// Length of reach
 	float Reach = 100.f;
 	
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+
+	UInputComponent* InputComp = nullptr;
+
+	// ray-cast in reach object
+	void Grab();
+
+	// release of grab key
+	void Release();
+
+	void FindPhysicsComp();
+
+	void SetupInputComp();
+
+	// Return hit first body in reach
+	const FHitResult GetBodyInReach();
+
+	FVector GetTraceEnd();
+	FVector GetTraceStart();
 };
